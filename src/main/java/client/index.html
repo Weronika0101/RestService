@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        #operations {
+            background-color: #e0e0e0;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        #item-list {
+            background-color: #d0f0c0;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #999;
+            padding: 5px;
+            text-align: left;
+        }
+        th {
+            background-color: #ccc;
+        }
+        td {
+            background-color: #fff;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="operations">
+    <h2>Book Operations</h2>
+    ID: <input type="number" id="bookId"><br>
+    Title: <input type="text" id="bookTitle"><br>
+    Author: <input type="text" id="bookAuthor"><br>
+    Year: <input type="number" id="bookYear"><br>
+    <button onclick="createBook()">Add Book</button>
+</div>
+
+<div id="item-list">
+    <h2>Books</h2>
+    <table id="itemsTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Book entries will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<div id="editBookModal" style="display:none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 20px; border: 1px solid #ccc; background-color: #fff; z-index: 1000;">
+    <h2>Edit Book</h2>
+    <form id="editForm">
+        ID: <input type="number" id="editBookId" disabled><br>
+        Title: <input type="text" id="editBookTitle"><br>
+        Author: <input type="text" id="editBookAuthor"><br>
+        Year: <input type="number" id="editBookYear"><br>
+        <button type="button" onclick="saveBook()">Save Changes</button>
+        <button type="button" onclick="closeEditModal()">Close</button>
+    </form>
+</div>
+
+
+<script src="client.js"></script>
+
+</body>
+</html>
+
